@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/personal/learning-projects/android/android-ui-settings/app/src/main/res/layout/account_settings.xml" value="0.25364583333333335" />
         <entry key="..\:/Projects/personal/learning-projects/android/android-ui-settings/app/src/main/res/layout/activity_main.xml" value="0.23958333333333334" />
+        <entry key="..\:/Projects/personal/learning-projects/android/android-ui-settings/app/src/main/res/xml/account_settings.xml" value="0.1" />
         <entry key="..\:/Projects/personal/learning-projects/android/android-ui-settings/app/src/main/res/xml/settings.xml" value="0.25364583333333335" />
       </map>
     </option>
