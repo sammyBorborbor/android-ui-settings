@@ -66,6 +66,14 @@
             android:title="@string/title_new_msg_notif"
             app:iconSpaceReserved="false" />
 
+        <SeekBarPreference
+            android:key="@string/key_font_size"
+            android:title="@string/title_font_size"
+            android:summary="@string/summary_font_size"
+            app:iconSpaceReserved="false"
+            android:max="12"
+            android:defaultValue="4" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -81,7 +89,12 @@
         <Preference
             android:key="@string/key_privacy_policy"
             android:title="@string/title_privacy_policy"
-            app:iconSpaceReserved="false" />
+            app:iconSpaceReserved="false">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.google.com"/>
+        </Preference>
 
     </PreferenceCategory>
 

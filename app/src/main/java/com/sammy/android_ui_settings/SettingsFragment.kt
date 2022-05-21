@@ -8,15 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
-import androidx.preference.EditTextPreference
-import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.PreferenceManager
+import androidx.preference.*
 
 
 class SettingsFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
+
+        val dataStore = DataStore()
+//        preferenceManager.preferenceDataStore = dataStore
 
         val accSettingsPref = findPreference<Preference>(getString(R.string.key_account_settings))
 
@@ -49,6 +49,38 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 false
             } else {
                 true
+            }
+        }
+
+        val notificationPref = findPreference<SwitchPreferenceCompat>(getString(R.string.key_new_msg_notif))
+        notificationPref?.summaryProvider = Preference.SummaryProvider<SwitchPreferenceCompat> { switchPref ->
+            if(switchPref.isChecked) {
+                "Status: ON"
+            } else {
+                "Status: OFF"
+            }
+        }
+        notificationPref?.preferenceDataStore = dataStore
+
+        val isNotificationEnabled = dataStore.getBoolean("key_new_msg_notif", false)
+
+    }
+
+    class DataStore: PreferenceDataStore() {
+
+        override fun getBoolean(key: String?, defValue: Boolean): Boolean {
+            if(key == "key_new_msg_notif") {
+                // save value to cloud or local db
+                Log.i("TEST", "$key")
+            }
+
+            return defValue
+        }
+
+        override fun putBoolean(key: String?, value: Boolean) {
+            if(key == "key_new_msg_notif") {
+                // save value to cloud or local db
+                Log.i("TEST", "$key: $value")
             }
         }
 

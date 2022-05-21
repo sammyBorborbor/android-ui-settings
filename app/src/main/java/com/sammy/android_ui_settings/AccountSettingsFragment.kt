@@ -1,12 +1,7 @@
 package com.sammy.android_ui_settings
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
-import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.MultiSelectListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
@@ -35,7 +30,8 @@ class AccountSettingsFragment : PreferenceFragmentCompat() {
         deleteAccPref.key = getString(R.string.key_delete_account)
         deleteAccPref.summary = getString(R.string.summary_delete_account)
         deleteAccPref.title = getString(R.string.title_delete_account)
-        deleteAccPref.icon = ResourcesCompat.getDrawable(resources, android.R.drawable.ic_menu_delete, null)
+        deleteAccPref.icon =
+            ResourcesCompat.getDrawable(resources, android.R.drawable.ic_menu_delete, null)
 
         val privacyCategory = PreferenceCategory(requireContext())
         privacyCategory.title = getString(R.string.title_privacy)

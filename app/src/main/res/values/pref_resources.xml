@@ -90,4 +90,8 @@
         <item>4</item>    <!-- index 4 -->
     </string-array>
 
+    <string name="key_font_size">key_font_size</string>
+    <string name="title_font_size">Font</string>
+    <string name="summary_font_size">Select a font size</string>
+
 </resources>
